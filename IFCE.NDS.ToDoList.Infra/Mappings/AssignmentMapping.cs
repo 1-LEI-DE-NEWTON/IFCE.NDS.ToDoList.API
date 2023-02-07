@@ -12,6 +12,10 @@ public class AssignmentMapping : IEntityTypeConfiguration<Assignment>
             .HasKey(c => c.Id);
 
         builder
+            .Property(c => c.Name)
+            .IsRequired();
+
+        builder
             .Property(c => c.Description)
             .IsRequired()
             .HasColumnType("VARCHAR(255)");

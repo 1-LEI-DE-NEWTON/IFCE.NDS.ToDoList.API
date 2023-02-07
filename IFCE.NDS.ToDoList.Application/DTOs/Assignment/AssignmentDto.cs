@@ -4,6 +4,7 @@ namespace NDS_ToDo.Application.DTOs.Assignment;
 
 public class AssignmentDto
 {
+    public string Name { get; set; } = string.Empty;
     public Guid Id { get; set; }
     public string Description { get; set; }
     public Guid? AssignmentListId { get; set; }
