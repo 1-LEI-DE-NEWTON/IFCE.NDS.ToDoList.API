@@ -12,10 +12,6 @@ namespace NDS_ToDo.Infra
     {
         public static void AddInfraData(this IServiceCollection services, string connectionString)
         {
-            // Informa manualmente a versão - Pode ser problema se seu servidor de prod tem versão diferente de local... 
-            //var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
-
-            // Deixa a lib detectar qual a versão do MySQL
             var serverVersion = new MySqlServerVersion(ServerVersion.AutoDetect(connectionString));
             services
                 .AddDbContext<ApplicationDbContext>(dbContextOptions =>

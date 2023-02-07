@@ -12,6 +12,7 @@ namespace NDS_ToDo.Application
         {
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+            services.AddLocalizationConfig();
 
             services.AddAuthConfiguration(configuration);
 
@@ -36,6 +37,8 @@ namespace NDS_ToDo.Application
         public static void UseApplicationConfiguration(this IApplicationBuilder app)
         {
 
+            app.UseLocalizationConfig();
+            
             app.UseHttpsRedirection();
 
             app.UseCors("default");
