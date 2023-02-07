@@ -14,6 +14,11 @@ public class AssignmentListMapping : IEntityTypeConfiguration<AssignmentList>
         builder
             .Property(c => c.Name)
             .IsRequired();
+        
+        builder.
+            Property(c => c.Description)
+            .IsRequired()
+            .HasColumnType("VARCHAR(255)");
 
         builder
             .Property(c => c.UserId)

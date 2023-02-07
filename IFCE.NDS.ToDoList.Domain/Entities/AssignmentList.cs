@@ -5,6 +5,8 @@ namespace NDS_ToDo.Domain.Entities;
 public class AssignmentList : Base
 {
     public string Name { get; set; }
+    
+    public string Description { get; set; }
     public Guid UserId { get; set; }
 
     // EF Relation
